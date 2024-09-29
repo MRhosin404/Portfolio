@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="Understanding JavaScript Closures: A complete guide on how closures work in JavaScript, with code examples and explanations.">
+    <meta name="keywords" content="JavaScript, Closures, JavaScript Closures, Web Development, JavaScript Concepts">
+    <meta name="author" content="Your Name">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding JavaScript Closures</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- ++++++++ Customt Navigation var section Start here +++++++ -->
+    <header>
+        <h1 class="logo">Lonely <span class="span_color">coder</span> </h1>
+        <div class="menubar" onclick="myFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+        <nav class="blog1">
+            <ul class="nav_bar">
+                <li><a href="index.html#about">Home</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- ++++++++ Customt Navigation var section Close  here +++++++ -->
+
+    <section class="content">
+
+        <div>
+            <h1>Understanding JavaScript Closures</h1>
+        </div>
+        <article>
+            <h2>What Are JavaScript Closures?</h2>
+            <p>In JavaScript, a closure is created when a function is defined inside another function, and the inner
+                function has access to the outer function's variables. Closures are an important concept because they
+                allow for encapsulation and help in creating function factories, callbacks, and maintaining state.</p>
+
+            <h3>How Closures Work</h3>
+            <p>When a function is declared inside another function, the inner function forms a "closure" with the outer
+                function’s variables, even after the outer function has executed. This allows the inner function to
+                remember and access these variables.</p>
+
+            <h4>Example of JavaScript Closures:</h4>
+            <pre>
+<code>
+function outerFunction() {
+    let counter = 0;
+    return function innerFunction() {
+        counter++;
+        console.log(counter);
+    };
+}
+const increment = outerFunction();
+increment(); // Output: 1
+increment(); // Output: 2
+</code>
+            </pre>
+            <p>In the above example, even though the outer function has completed execution, the inner function still
+                has access to the `counter` variable, showcasing the concept of closures.</p>
+
+            <h3>Why Closures Are Useful</h3>
+            <ul>
+                <li><strong>Data Privacy:</strong> Closures allow you to create private variables that can only be
+                    accessed by a specific function, keeping your code secure.</li>
+                <li><strong>Callbacks and Event Handlers:</strong> Closures are essential when working with asynchronous
+                    JavaScript like callbacks and event listeners.</li>
+                <li><strong>Function Factories:</strong> You can use closures to create functions that are customized
+                    with specific parameters.</li>
+            </ul>
+
+            <h3>Common Use Cases of Closures</h3>
+            <p>Some common scenarios where closures are used include:</p>
+            <ul>
+                <li>Encapsulating data (module patterns)</li>
+                <li>Creating function factories</li>
+                <li>Working with callbacks in asynchronous programming</li>
+                <li>Maintaining state between function calls</li>
+            </ul>
+        </article>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2024 Lonely coder. All Rights Reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/MRhosin404/my-web-site-1" target="_blank">GitHub</a>
+                <a href="https://www.facebook.com/profile.php?id=100091622780498" target="_blank">Facebock</a>
+                <a href="#">youtube</a>
+                <!-- Add more social links as needed -->
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+        const show_bar = document.querySelector(".nav_bar");
+
+        function myFunction(x) {
+            x.classList.toggle("change");
+            show_bar.classList.toggle("nav_bar_active");
+            if (!x.classList("nav_bar_active")) {
+                show_bar.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
