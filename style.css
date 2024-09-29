@@ -1,0 +1,545 @@
+/* Basic Resets */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+
+:root {
+    --green: #64d790;
+    --blue: #1e90ff;
+    --white: #ffffff;
+    --black: #242428;
+    --red: #e50914;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* ++++++++ Customt Navigation var section start here +++++++ */
+header {
+    position: relative;
+    padding: 10px;
+    width: 100%;
+    margin: 0;
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 88;
+}
+
+.logo {
+    font-family: "Pathway Extreme", sans-serif;
+    color: var(--white);
+    margin: 0px 10px;
+}
+
+.span_color {
+    color: var(--red);
+}
+
+/* menu bar button */
+.menubar {
+    display: none;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 30px;
+    height: 4px;
+    background-color: var(--white);
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+/* menu bar button  close */
+
+
+header nav ul {
+    display: flex;
+
+}
+
+header nav ul li {
+    list-style: none;
+    margin: 10px;
+    position: relative;
+}
+
+header nav ul li::before {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: yellow;
+    display: block;
+    margin: auto;
+    transition: .5s;
+    position: absolute;
+    left: 0;
+    bottom: 25px;
+}
+
+header nav ul li:hover::before {
+    width: 100%;
+
+}
+
+header nav ul li::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: var(--blue);
+    display: block;
+    margin: auto;
+    transition: .5s;
+    position: absolute;
+    right: 0;
+    top: 25px;
+}
+
+header nav ul li:hover::after {
+    width: 100%;
+
+}
+
+header nav ul li a {
+    cursor: pointer;
+    align-items: center;
+    font-weight: 400;
+    text-transform: uppercase;
+    width: 100%;
+    font-size: 1.07rem;
+    color: #d3d3d3;
+    font-family: "Pathway Extreme", sans-serif;
+    text-decoration: none;
+    transition: .3s;
+}
+
+header nav ul li a:hover {
+    color: var(--white);
+}
+
+@media only screen and (max-width: 700px) {
+    .menubar {
+        display: inline-block;
+        cursor: pointer;
+        position: absolute;
+        right: 15px;
+        z-index: 4;
+    }
+
+    header nav ul {
+        display: flex;
+        position: absolute;
+        left: 0px;
+        top: 20px;
+        background: black;
+        line-height: 1.5;
+        width: 100%;
+        z-index: 0;
+        transition: all .5s ease-in-out;
+        z-index: 1;
+        opacity: 0;
+    }
+
+    .nav_bar_active {
+        top: 75px;
+        opacity: 1;
+    }
+
+    header nav ul li {
+        margin-left: 30px;
+        width: 60%;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    header nav ul li a:hover {
+        color: var(--black);
+    }
+
+    header nav ul li:hover {
+        background-color: var(--white);
+        color: var(--black);
+    }
+
+    header nav ul li:hover::before {
+        width: 0%;
+
+    }
+
+    header nav ul li:hover::after {
+        width: 0%;
+
+    }
+
+}
+
+/* ++++++++ Customt Navigation var section Close here +++++++ */
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.section {
+    padding: 60px 0;
+    height: 100%;
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+    color: #333;
+}
+
+/* About Section */
+#about {}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.about-photo {
+    flex: 1 1 250px;
+    max-width: 250px;
+    border-radius: 10%;
+    object-fit: cover;
+}
+
+.about-text {
+    flex: 2 1 500px;
+}
+
+.about-text h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+/* Projects Section */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.project-item h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.project-item p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.project-item .btn {
+    font-size: 14px;
+    padding: 8px 16px;
+}
+
+
+/* Skills Section */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.skills-list li {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.skil-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.skil-post {
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+/* Blog Section */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.blog-item {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.blog-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.blog-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.blog-item p {
+    font-size: 14px;
+    color: #666;
+}
+
+.blog-item a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.blog-item a:hover {
+    color: #555;
+}
+
+/* Contact Section */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+#form-message {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 16px;
+    color: green;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer .social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer .social-links a:hover {
+    color: #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        display: none;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+
+/* blog post 1  */
+
+/* Article and Content Styles */
+.blog1 {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    width: 60%;
+}
+
+.content {
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.content h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.content div {
+    text-align: center;
+}
+
+.content div h2 {
+    margin-bottom: 10px;
+}
+
+.content h3 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+.content p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+pre {
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    color: #e83e8c;
+}
