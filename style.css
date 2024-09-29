@@ -568,3 +568,17 @@ code {
     font-family: 'Courier New', Courier, monospace;
     color: #e83e8c;
 }
+
+@media (max-width: 600px) {
+
+    .blog1 {
+        width: 40%;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .blog1 {
+        width: 15%;
+    }
+}
